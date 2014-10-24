@@ -2,7 +2,7 @@ angular.module('tabset').directive('tabset', function () {
     return{
         restrict: 'AE',
         scope: true,
-        templateUrl: 'tabset/tabset.html',
+        templateUrl: 'tabset/html/tabset.html',
         replace: true,
         transclude: true,
         controller: function ($scope) {

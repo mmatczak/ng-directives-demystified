@@ -5,7 +5,7 @@ angular.module('tabset').directive('tab', function () {
         scope: {
             title: '@'
         },
-        templateUrl: 'tabset/tab.html',
+        templateUrl: 'tabset/html/tab.html',
         transclude: true,
         replace: true,
         link: function (scope, element, attrs, tabsetCntl) {

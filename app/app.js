@@ -1,4 +1,4 @@
-angular.module('dd', ['simple-directive', 'tabset'])
+angular.module('dd', ['tabset'])
     .controller('MainCntl', function ($scope) {
         $scope.message = "Hello World";
     });
