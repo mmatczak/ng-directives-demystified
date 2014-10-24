@@ -1,0 +1,25 @@
+.reveal h1.no_upper,
+.reveal h2.no_upper,
+.reveal h3.no_upper,
+.reveal h4.no_upper,
+.reveal h5.no_upper,
+.reveal h6.no_upper {
+	text-transform: none;
+}
+
+.reveal section img {
+    border: none;
+    box-shadow: none;
+}
+
+.reveal section img.middle {
+	vertical-align : middle;
+}
+
+div.margin_top_30 {
+	margin-top: 30px;
+}
+
+h1.highlight, h2.highlight, h3.highlight {
+    color: #71e9f4;
+}
