@@ -21,8 +21,9 @@ module.exports = function (config) {
             'app/lib/angular/angular.js',
             'app/lib/angular-mocks/angular-mocks.js',
             'app/lib/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js',
-            'app/validation-directive/**/*.js',
-            'app/validation-directive/**/*.spec.js'
+            'app/**/js/*.module.js',
+            'app/**/js/*.js',
+            'app/**/js/*.spec.js'
         ],
 
         // list of files / patterns to exclude
