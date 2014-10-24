@@ -76,7 +76,7 @@ module.exports = function (grunt) {
         'karma:unit'
     ]);
     grunt.registerTask('test:debug', [
-        'karma:chrome'
+        'karma:unit_chrome'
     ]);
     grunt.registerTask('test:ci', [
         'karma:ci'
