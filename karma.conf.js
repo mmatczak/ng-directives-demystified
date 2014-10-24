@@ -15,14 +15,20 @@ module.exports = function (config) {
         // testing framework to use (jasmine/mocha/qunit/...)
         frameworks: ['jasmine'],
 
+        preprocessors: {
+            'app/!(lib)/**/*.html': ['ng-html2js']
+        },
+
         // list of files / patterns to load in the browser
         files: [
             'app/lib/jquery/dist/jquery.js',
             'app/lib/angular/angular.js',
             'app/lib/angular-mocks/angular-mocks.js',
             'app/lib/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js',
-            'app/validation-directive/**/*.js',
-            'app/validation-directive/**/*.spec.js'
+            'app/!(lib)/**/*.module.js',
+            'app/!(lib)/**/*.js',
+            'app/!(lib)/**/*.html',
+            'app/!(lib)/**/*.spec.js'
         ],
 
         // list of files / patterns to exclude
@@ -40,12 +46,12 @@ module.exports = function (config) {
         // - PhantomJS
         // - IE (only Windows)
         browsers: [
-            'PhantomJS'
+            'Chrome'
         ],
 
         // Which plugins to enable
         plugins: [
-            'karma-phantomjs-launcher', 'karma-chrome-launcher', 'karma-jasmine'
+            'karma-phantomjs-launcher', 'karma-chrome-launcher', 'karma-jasmine', 'karma-ng-html2js-preprocessor'
         ],
 
         // Continuous Integration mode
@@ -56,6 +62,11 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-        logLevel: config.LOG_INFO
+        logLevel: config.LOG_INFO,
+
+        ngHtml2JsPreprocessor: {
+            moduleName: 'app.templates',
+            stripPrefix: 'app/'
+        }
     });
 };
