@@ -1,7 +1,6 @@
-<div>
+<div class="tabset">
     <ul class="nav nav-tabs" role="tablist">
-        <li><a href="#">Home</a></li>
-        <li class="active"><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
+        <li ng-click="selectTab($index)" ng-class="{'active':tab.active}" ng-repeat="tab in tabs"><a href="#">{{tab.title}}</a></li>
     </ul>
+    <div ng-transclude=""></div>
 </div>
