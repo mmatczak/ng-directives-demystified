@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" type="text/css"  href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css"  href="tabset/tabset.css">
+</head>
 <body data-ng-app="dd" ng-controller="MainCntl">
-
 <div class="container">
-    {{message}}
+    <tabset>
+    </tabset>
 </div>
 <!-- bower:js -->
 <script src="lib/jquery/dist/jquery.js"></script>
@@ -14,6 +18,10 @@
 
 <script src="app.js"></script>
 <script src="validation-directive/js/dd-validation.directive.js"></script>
+<script src="tabset/tabset.module.js"></script>
+<script src="tabset/pane.directive.js"></script>
+<script src="tabset/tabset.directive.js"></script>
+<script src="tabset/tab.directive.js"></script>
 
 <script src="//localhost:35729/livereload.js"></script>
 </body>
