@@ -6,7 +6,25 @@
 </head>
 <body data-ng-app="dd" ng-controller="MainCntl">
 <div class="container">
-    <h1>{{message}}</h1>
+    <tabset>
+        <tab data-title="Tab 1">
+            Tab 1 Content
+        </tab>
+        <tab data-title="Tab 2">
+            Tab 2 Content
+        </tab>
+        <tab data-title="Tab 3">
+            Tab 3 Content
+        </tab>
+    </tabset>
+    <hr>
+    <panel title="{{message}}">
+        {{message}}
+    </panel>
+    <hr/>
+    <div dir-a dir-c dir-b >
+        <p dir-child-a></p>
+    </div>
 </div>
 <!-- bower:js -->
 <script src="lib/jquery/dist/jquery.js"></script>
@@ -14,6 +32,12 @@
 <script src="lib/angular/angular.js"></script>
 <!-- endbower -->
 
+<script src="panel/js/panel.module.js"></script>
+<script src="panel/js/panel.directive.js"></script>
+<script src="tabset/js/tabset.module.js"></script>
+<script src="tabset/js/tabset.directive.js"></script>
+<script src="tabset/js/tab.directive.js"></script>
+<script src="directives-demystified/js/directives-demystified.module.js"></script>
 <script src="app.js"></script>
 
 <script src="//localhost:35729/livereload.js"></script>
