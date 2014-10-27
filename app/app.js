@@ -1,4 +1,4 @@
-angular.module('dd', ['panel', 'tabset', 'directives-demystified'])
+angular.module('dd', [])
     .controller('MainCntl', function ($scope) {
         'use strict';
 
