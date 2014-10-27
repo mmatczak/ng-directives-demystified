@@ -8,19 +8,24 @@ angular.module('tabset').directive('tabset', function () {
         replace: true,
         transclude: true,
         controller: function ($scope) {
-            var ctrl = this,
-                tabs = ctrl.tabs = $scope.tabs = [];
-            ctrl.addTab = function (tab) {
-                tabs.push(tab);
-                if (tabs.length === 1) {
-                    tab.active = 1;
-                }
-            };
+            $scope.tabs = [];
+
             $scope.selectTab = function (index) {
-                angular.forEach(tabs, function (tab) {
-                    tab.active = false;
-                });
-                tabs[index].active = true;
+                var deactivateAllTabs = function (tabs) {
+                    angular.forEach(tabs, function (tab) {
+                        tab.active = false;
+                    });
+                };
+                deactivateAllTabs($scope.tabs);
+                $scope.tabs[index].active = true;
+            };
+
+            // Controller's API for the tab directive
+            this.addTab = function (tabState) {
+                $scope.tabs.push(tabState);
+                if ($scope.tabs.length === 1) {
+                    tabState.active = true;
+                }
             };
         }
     };
