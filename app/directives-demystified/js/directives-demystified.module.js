@@ -7,7 +7,9 @@ angular.module('directives-demystified', [])
         return {
             restrict: 'A',
             priority: 500,
-            scope:true,
+            scope:{},
+            transclude:true,
+            templateUrl:'directives-demystified/html/dir-a.html',
             controller: function ($scope) {
                 $log.debug('Controller \tdir-a (500)' + logScope($scope))
             },
@@ -66,16 +68,16 @@ angular.module('directives-demystified', [])
         return {
             restrict: 'A',
             controller: function ($scope) {
-                $log.debug('Controller \t\tdir-child-a (400)' + logScope($scope))
+                $log.debug('Controller \t\tdir-child-a' + logScope($scope))
             },
             compile: function () {
-                $log.debug('Compile \t\tdir-child-a (400)');
+                $log.debug('Compile \t\tdir-child-a');
                 return {
                     pre: function ($scope) {
-                        $log.debug('Prelink \t\tdir-child-a (400)');
+                        $log.debug('Prelink \t\tdir-child-a');
                     },
                     post: function ($scope) {
-                        $log.debug('Postlink \t\tdir-child-a (400)');
+                        $log.debug('Postlink \t\tdir-child-a');
                     }
                 }
             }
