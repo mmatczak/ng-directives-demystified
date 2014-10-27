@@ -2,7 +2,7 @@ angular.module('panel').directive('panel', function () {
     'use strict';
 
     return {
-        restrict: 'AE',
+        restrict: 'E',
         scope: {
             title: '@'
         },

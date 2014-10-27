@@ -24,7 +24,6 @@ module.exports = function (config) {
             'app/lib/jquery/dist/jquery.js',
             'app/lib/angular/angular.js',
             'app/lib/angular-mocks/angular-mocks.js',
-            'app/lib/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js',
             'app/!(lib)/**/*.module.js',
             'app/!(lib)/**/*.js',
             'app/!(lib)/**/*.html',
