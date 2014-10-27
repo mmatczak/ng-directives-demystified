@@ -1,5 +1,7 @@
 angular.module('tabset').directive('tab', function () {
-    return{
+    'use strict';
+
+    return {
         restrict: 'AE',
         require: '^tabset',
         scope: {
@@ -14,5 +16,5 @@ angular.module('tabset').directive('tab', function () {
             };
             tabsetCntl.addTab(scope.tabState);
         }
-    }
+    };
 });

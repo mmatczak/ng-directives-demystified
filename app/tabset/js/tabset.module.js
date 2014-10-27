@@ -1,1 +1,1 @@
-angular.module('tabset', ['panel']);
+angular.module('tabset', []);

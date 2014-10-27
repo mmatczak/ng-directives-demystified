@@ -1,6 +1,8 @@
 angular.module('tabset').directive('tabset', function () {
-    return{
-        restrict: 'AE',
+    'use strict';
+
+    return {
+        restrict: 'E',
         scope: true,
         templateUrl: 'tabset/html/tabset.html',
         replace: true,
@@ -21,5 +23,5 @@ angular.module('tabset').directive('tabset', function () {
                 tabs[index].active = true;
             };
         }
-    }
+    };
 });
