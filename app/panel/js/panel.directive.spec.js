@@ -22,6 +22,7 @@ describe('\'panel\' directive', function () {
         $scope.$apply();
         // then
         expect(element.find('div.panel-heading').text()).toEqual(title);
+        expect(element.hasClass('panel')).toBeTruthy();
     });
 
     it('adds a paragraph to the panel\'s body', function () {
@@ -34,5 +35,6 @@ describe('\'panel\' directive', function () {
         $scope.$apply();
         // then
         expect(element.find('div.panel-body p').text()).toEqual(body);
+        expect(element.hasClass('panel')).toBeTruthy();
     });
 });
