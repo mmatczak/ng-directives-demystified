@@ -1,4 +1,4 @@
-var logScope = function ($scope) {
+var scopeToString = function ($scope) {
     return '\tscope=' + $scope.$id + ', parentScope=' + $scope.$parent.$id;
 };
 angular.module('directives-demystified', [])
@@ -11,7 +11,7 @@ angular.module('directives-demystified', [])
             transclude:true,
             templateUrl:'directives-demystified/html/dir-a.html',
             controller: function ($scope) {
-                $log.debug('Controller \tdir-a (500)' + logScope($scope))
+                $log.debug('Controller \tdir-a (500)' + scopeToString($scope))
             },
             compile: function () {
                 $log.debug('Compile \tdir-a (500)');
@@ -30,7 +30,7 @@ angular.module('directives-demystified', [])
             restrict: 'A',
             priority: 400,
             controller: function ($scope) {
-                $log.debug('Controller \tdir-b (400)' + logScope($scope))
+                $log.debug('Controller \tdir-b (400)' + scopeToString($scope))
             },
             compile: function () {
                 $log.debug('Compile \tdir-b (400)');
@@ -50,7 +50,7 @@ angular.module('directives-demystified', [])
             restrict: 'A',
             priority: 400,
             controller: function ($scope) {
-                $log.debug('Controller \tdir-c (400)' + logScope($scope))
+                $log.debug('Controller \tdir-c (400)' + scopeToString($scope))
             },
             compile: function () {
                 $log.debug('Compile \tdir-c (400)');
@@ -68,7 +68,7 @@ angular.module('directives-demystified', [])
         return {
             restrict: 'A',
             controller: function ($scope) {
-                $log.debug('Controller \t\tdir-child-a' + logScope($scope))
+                $log.debug('Controller \t\tdir-child-a' + scopeToString($scope))
             },
             compile: function () {
                 $log.debug('Compile \t\tdir-child-a');
