@@ -43,19 +43,73 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
         <section>
-            <h2 class="highlight">AngularJS Directives Demystified</h2>
-            <h4>Tomasz Bialecki, Marek Matczak</h4>
+            <p class="title_image"><img class="white_solid_border" height="300" src="img/title.jpg"></p>
+            <h2 class="highlight">AngularJS Directives</h2>
+            <h2 class="highlight">Demystified</h2>
+            <p>Tomasz Białecki, Marek Matczak</p>
         </section>
         <section>
-            <h3>What are Directives?</h3>
-            <blockquote>At a high level, directives are markers on a DOM element (such as an attribute, element name,
-                comment or CSS class) that tell AngularJS's HTML compiler to attach a specified behavior to that DOM
-                element or even transform the DOM element and its children.
-            </blockquote>
+            <div class="column">
+                <p class="title_image"><img class="white_solid_border" height="250" src="img/mmatczak.jpg"></p>
+                <p class="highlight">Marek Matczak</p>
+                <p>Software architect</p>
+                <p>Specializes in web applications</p>
+                <p>Impressed with JavaScript</p>
+            </div>
+            <div class="column">
+                <p>AngularJS enthusiast</p>
+                <p>Rich web clients' designer</p>
+                <p class="highlight">Tomasz Białecki</p>
+                <p class="title_image"><img class="white_solid_border" height="250" src="img/tbialecki.jpg"></p>
+            </div>
+        </section>
+        <section>
+            <div class="column">
+                <p class="title_image"><img class="white_solid_border" height="350" src="img/capgemini-wroclaw.jpg"></p>
+                <p class="highlight">Capgemini</p>
+                <p>Software Solutions Center</p>
+                <p>Wrocław</p>
+            </div>
+            <div class="column">
+                <div>
+                    <p><span class="highlight">Over 600 programmers</span></p>
+                    <p>designers, architects,</p>
+                    <p>testers, project managers</p>
+                    <p>and consultants</p>
+                </div>
+                <div class="margin_top_30">
+                    <p><span class="highlight">Almost 100  projects</span></p>
+                    <p>in <span class="highlight">different technologies</span></p>
+                    <p>(Java, .Net, JavaScript)</p>
+                    <p>from <span class="highlight">different sectors</span></p>
+                    <p>(logistics, automotive,</p>
+                    <p>financial services</p>
+                    <p>and telecommunications)</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3 class="highlight">We go for the Good Parts of JavaScript</h3>
+            <div>
+                <img src="img/javascript-the-good-parts-patterns.jpg" >
+            </div>
+            <div>
+                <small>Picture taken from: <a href="http://frightanic.com/category/software-development/javascript/">http://frightanic.com/category/software-development/javascript/</a></small>
+            </div>
+        </section>
+        <section>
+            <h3 class="highlight">What are directives?</h3>
+            <p class="justify_text">At a high level, directives are <span class="highlight">markers</span> on a DOM element (such as an attribute, element name,
+                comment or CSS class) that tell AngularJS's HTML compiler to <span class="highlight">attach a specified behavior</span> to that DOM
+                element or even <span class="highlight">transform</span> the DOM element and its children.
+            </p>
+            <div class="margin_top_30">
+                <p class="align_right"><small><a href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a></small></p>
+            </div>
         </section>
         <section>
             <section data-transition="none">
-                <h3>How to attache directive to an element?</h3>
+                <h3 class="highlight">Directive declaration styles: an element name</h3>
             <pre><code contenteditable data-trim>
 .directive('myDirective', function(){
     return {
@@ -68,7 +122,7 @@
                 </code></pre>
             </section>
             <section data-transition="none">
-                <h3>How to attache directive to an element?</h3>
+                <h3 class="highlight">Directive declaration styles: an attribute</h3>
             <pre><code contenteditable data-trim>
 .directive('myDirective', function(){
     return {
@@ -81,7 +135,7 @@
                 </code></pre>
             </section>
             <section data-transition="none">
-                <h3>How to attache directive to an element?</h3>
+                <h3 class="highlight">Directive declaration styles: a CSS class</h3>
             <pre><code contenteditable data-trim>
 .directive('myDirective', function(){
     return {
@@ -93,37 +147,50 @@
 <div class="my-directive"></div>
                 </code></pre>
             </section>
+            <section data-transition="none">
+                <h3 class="highlight">Directive declaration styles: a comment</h3>
+            <pre><code contenteditable data-trim>
+.directive('myDirective', function(){
+    return {
+        restrict:'M'
+    }
+});
+                </code></pre>
+<pre><code contenteditable data-trim>
+<!-- directive: my-directive -->
+                </code></pre>
+            </section>
         </section>
         <section>
             <section data-transition="none">
-                <h3>What is a scope of directive?</h3>
-                <pre class="fragment"><code contenteditable data-trim>
+                <h3 class="highlight">Directive's scope: the parent one used</h3>
+                <pre><code contenteditable data-trim>
 .directive('myDirective', function(){
     return {
         restrict: 'ACE'
-        scope: false                    //no scope (use parent scope)
+        scope: false                    //no scope created, the parent one used
     }
 });
                 </code></pre>
             </section>
             <section data-transition="none">
-                <h3>What is a scope of directive?</h3>
+                <h3 class="highlight">Directive's scope: a child scope created</h3>
                 <pre><code contenteditable data-trim>
 .directive('myDirective', function(){
     return {
         restrict: 'ACE'
-        scope: true                     //create child scope
+        scope: true                     //create a child scope
     }
 });
                 </code></pre>
             </section>
             <section data-transition="none">
-                <h3>What is a scope of directive?</h3>
+                <h3 class="highlight">Directive's scope: an isolated scope created</h3>
                 <pre><code contenteditable data-trim>
 .directive('myDirective', function(){
     return {
         restrict: 'ACE'
-        scope: {                        //create new isolated scope
+        scope: {                        //create an isolated scope
         }
     }
 });
@@ -131,11 +198,35 @@
             </section>
         </section>
         <section>
-            <div>
-                <img height="250" src="img/questions.jpg">
-            </div>
+            <p class="title_image">
+                <a href="https://github.com/mmatczak/ng-directives-demystified"><img class="white_solid_border" src="img/GitHub-Mark-Light-120px-plus.png"></a>
+            </p>
+            <p>
+                <a target="_blank" href="https://github.com/mmatczak/ng-directives-demystified">https://github.com/mmatczak/ng-directives-demystified</a>
+            </p>
+        </section>
+        <section>
+            <h3 class="highlight">What is transclusion?</h3>
+            <p class="justify_text">Transclusion is the process of <span class="highlight">extracting</span> a collection of DOM elements from
+                one part of the DOM and <span class="highlight">copying</span> them to another part of the DOM,
+                while maintaining their <span class="highlight">connection to the original AngularJS scope</span> from where they were taken.
+            </p>
             <div class="margin_top_30">
-                <h2>Questions?</h2>
+                <p class="align_right"><small><a href="https://docs.angularjs.org/api/ng/service/$compile#transclusion">https://docs.angularjs.org/api/ng/service/$compile#transclusion</a></small></p>
+            </div>
+        </section>
+        <section>
+            <h3 class="highlight">Further reading</h3>
+            <div>
+                <img height="394" src="img/mastering-web-apps-dev-with-angularjs.jpg" >
+            </div>
+        </section>
+        <section>
+            <p class="title_image">
+                <img class="white_solid_border" height="250" src="img/questions.jpg">
+            </p>
+            <div class="margin_top_30">
+                <h2 class="highlight">Questions?</h2>
             </div>
         </section>
     </div>
@@ -144,7 +235,7 @@
 <script src="revealjs/lib/js/head.min.js"></script>
 <script src="revealjs/js/reveal.min.js"></script>
 <a class="fork-reveal" style="display: block;" href="http://www.capgemini.com">
-    <img style="position: absolute; top: 20px; right: 20px; border: 0;" width="200" src="img/Logo_White_Capgemini.png">
+    <img style="position: absolute; top: 20px; right: 20px; border: 0;" width="200" src="img/capgemini-logo-white.png">
 </a>
 <script>
 
