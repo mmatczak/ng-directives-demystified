@@ -69,6 +69,15 @@ module.exports = function (grunt) {
                 configFile: 'karma.conf.js',
                 singleRun: true
             }
+        },
+        coveralls: {
+            options: {
+                debug: true,
+                coverage_dir: 'coverage/',
+                dryRun: false,
+                force: true,
+                recursive: true
+            }
         }
     });
 
@@ -79,7 +88,7 @@ module.exports = function (grunt) {
         'karma:unit_chrome'
     ]);
     grunt.registerTask('test:ci', [
-        'karma:ci'
+        'karma:ci', 'coveralls'
     ]);
     grunt.registerTask('default', [
         'karma:unit'

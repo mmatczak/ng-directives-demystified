@@ -16,7 +16,8 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         preprocessors: {
-            'app/!(lib)/**/*.html': ['ng-html2js']
+            'app/!(lib)/**/*.html': ['ng-html2js'],
+            'app/!(lib)/**/!(*spec).js': ['coverage']
         },
 
         // list of files / patterns to load in the browser
@@ -50,8 +51,11 @@ module.exports = function (config) {
 
         // Which plugins to enable
         plugins: [
-            'karma-phantomjs-launcher', 'karma-chrome-launcher', 'karma-jasmine', 'karma-ng-html2js-preprocessor'
+            'karma-phantomjs-launcher', 'karma-chrome-launcher', 'karma-jasmine', 'karma-ng-html2js-preprocessor',
+            'karma-coverage'
         ],
+
+        reporters: ['coverage'],
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
@@ -66,6 +70,11 @@ module.exports = function (config) {
         ngHtml2JsPreprocessor: {
             moduleName: 'app.templates',
             stripPrefix: 'app/'
+        },
+
+        coverageReporter: {
+            type: "lcov",
+            dir: "coverage/"
         }
     });
 };
